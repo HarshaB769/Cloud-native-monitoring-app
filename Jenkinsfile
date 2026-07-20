@@ -10,7 +10,7 @@ pipeline{
         }
         stage('Build Docker Image'){
             steps{
-                sh 'docker  build -t cloud-native-monitoring-app:v1 .'
+                sh 'docker  build -t cloud-native-monitoring-app .'
             }
         }
         stage('Deploy App'){
@@ -23,7 +23,7 @@ pipeline{
                     --name cloud-native-monitoring-app \
                     -p 5000:5000 \
                     -e PORT='${PORT}' \
-                    cloud-native-monitoring-app:v1
+                    cloud-native-monitoring-app
                     """
                 }
             }
