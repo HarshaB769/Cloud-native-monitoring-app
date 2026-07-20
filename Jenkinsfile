@@ -12,15 +12,15 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t cloud-native-monitoring-app .'
+                sh 'cloud-native-monitoring-app:v1 .'
             }
         }
 
         stage('Deploy App') {
             steps {
                 sh '''
-                docker stop cloud-native-monitoring-app || true
-                docker rm cloud-native-monitoring-app || true
+                docker stop cloud-native-monitoring-app:v1 || true
+                docker rm cloud-native-monitoring-app:v1 || true
 
                 docker run -d \
                   --name cloud-native-monitoring-app \
