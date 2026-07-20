@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'cloud-native-monitoring-app .'
+                sh 'docker build -t cloud-native-monitoring-app  .'
             }
         }
 
