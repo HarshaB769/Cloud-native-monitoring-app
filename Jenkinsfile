@@ -24,7 +24,7 @@ pipeline {
 
                 docker run -d \
                   --name cloud-native-monitoring-app \
-                  -p 9000:9000 \
+                  -p 5000:5000 \
                   -e PORT=${PORT} \
                   cloud-native-monitoring-app
                 '''
